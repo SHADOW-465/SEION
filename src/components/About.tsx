@@ -11,7 +11,7 @@ const About: React.FC<AboutProps> = ({ darkMode }) => {
       name: 'Showmik Kumaar.R',
       role: 'CEO & Founder',
       bio: 'Visionary leader with experience in digital transformation and AI innovation. Drives strategic growth and technological excellence across all business verticals.',
-      image: ''
+      image: 'https://placehold.co/200x200/8b5cf6/FFFFFF?text=PR'
     },
     {
       name: 'Prithivi Raj.T',
