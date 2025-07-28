@@ -6,18 +6,20 @@ interface AboutProps {
 }
 
 const About: React.FC<AboutProps> = ({ darkMode }) => {
+  const placeholderImage = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJUAAACUCAMAAACtIJvYAAAAYFBMVEUAAAD////4+Pju7u7h4eH8/PzJyclZWVno6Oi1tbX19fUxMTHl5eUhISGxsbG9vb0cHBzZ2dmcnJw4ODgqKiqEhISTk5NHR0d5eXnS0tISEhJAQEBoaGioqKhOTk5wcHDHh5wsAAAE/0lEQVR4nN2c67KiOhBGwx3lJgiiIvL+b3mCjluFhHTCJ1BnVc2/qXJVaDqdTrOZRSJlGFLazzHS/3ICkFXgAK0ykBRjGc7KrmFWtQ2zymFSjOUwqwpoVaGswhJoVYYgqx1QirEdyAr5AGmPkGAFS1ZPKCmLYJUfoVZHwltIsMKl0CeEREqwKsBWBcLKwwY7D3cPYGXfwVZ39aajttpHYKtoj7BKwFYJwsq5gq2u6oSltgrBUoypd0K1VQy3ihFrBX+CiLXaZrTvkdVVTwmxasBWDcLK68BWHWLHsU5gq5P6JwlWqHPzC8L5mWDlH6BSBx9i5eLOqD21C7GyzlCrM+EXKVbYcCcEO8nqgtxzrheQlYU8egWUHyRZIXMDqa9GsnKAVqS2Gq2rhot3SqxTrXJU3VCS2ldEK9iZkHAWpFtZLmbXORDyuoYVKLJoUUW3gtR+hHpPzwpROVCqBU0rb/4zPNFCXcfK8m4zpW5kKQ0rK5zXBokozWN9K8ufoxWRg0rTyvLND6yJjpSelZWZvogH2q2SmZWVma1Woiela2XlJtm0oe3J5lZWrJ8gburW0Fwra6/b6S6o+8wcK/4q6jzFRuvlm2HFl4taBZYGC2VqxestWnTdiPUUyIrvP5VqvcpKY48BWfEk0U51trpWNx1grHh8XQpxZ6QuLkbxBLF6mPnFLaijMjkcDkkZ1cGt8GcZQaweOBff9zP+70Kb7VCBsULzP7ayndh18zx33dghTZyomGvl+G3VBXVzPEZRdDw2ddBVrT83usytvJi/fbJyK+FvYkw/PaCs8rZS7dFNZZxIjaycNKBtz2WQGj1MfSvH1+spnw2iTNdqn+o3SYNUN9nrWXmp2Y1AnepFvo6VszM/pkY7neeoYeXPa3AHGqUy2Srs5t4FXDtyFUi08lLE7XNCDS+aVYy6YDrTjoYkKx93IV6SoosyQQe+84JM0Dlze3xDboA5mQt6yIIHvfIyTmW1w0txLdXMqMKqRQ/JPLm2c6zQowxvpm8ppqwALfYJramEOmWFHn78ZmryV27105XqmVgtuRV6eHWMfJxVatX+XIox6Zsos8LOtMuQ5S2J1QU9uiomkmR5sZWDHR6XcxTviUIrDz16LOcufBFFVvavc8InJ1G7RGSFHrOfRnTFI7DKf1EmyEkEzQiBFfbjDTWCKaOx1e9z+pBxjh9ZzbgvNWV8zzq02i/9/HqCYXdkaLXE9jdmuCEOrPDD7DTiKSsPO4RJ5+xNWGW/OTyouWZyK/B3Zjp8f5P2ZbVOqD9pZVYedgxaj4MnsVo+q39SiK3C5aoqEfdQaLXuUn0t1ttqsapYxke1/LZa5lQzxW5s5a29VHyxvJHVsmWxmGxkhf7qxoRuaLXQsXSav0Pry2rJw5ac07eVs24GfXF3vqy2EOs92ZcVuqduyu3Tylvb5g/vwwr9gZk56YfVWuX6mPPbKkZ/TmlOE/9Zrb8xv9m9rOB/VWAOj69Q2HZS6JNHIu2tkH/EZj75P6s1D1xj2n9W651NRQRPK3utY7yYq/2wctf2GOA+rLYVVo/AYtuojT/peqtVeo5TBHtu5W5nE3zSuNxqhabxNInPrbZTW71IudXaTY8xhcXs7VR8L842W7EXKiNwWLh+12PIMWTutnbBnqvL/LUdBPhsK6fmTzK2pZPEix3bWsXQ07ItnW9eVGxrdUxPx7aXRHka/Q+GyT+QKGKLawAAAABJRU5ErkJggg==';
+
   const leadership = [
     {
       name: 'Showmik Kumaar.R',
       role: 'CEO & Founder',
       bio: 'Visionary leader with experience in digital transformation and AI innovation. Drives strategic growth and technological excellence across all business verticals.',
-      image: 'http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23a1a1aa'%3e%3cpath fill-rule='evenodd' d='M7.5 6a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM3.751 20.105a8.25 8.25 0 0116.498 0 .75.75 0 01-.437.695A18.683 18.683 0 0112 22.5c-2.786 0-5.433-.608-7.812-1.7a.75.75 0 01-.437-.695z' clip-rule='evenodd' /%3e%3c/svg%3e'
+      image: ''
     },
     {
       name: 'Prithivi Raj.T',
       role: 'COO & Co-Founder',
       bio: 'Operations expert specializing in scaling AI & IoT solutions for optimizing business processes. Ensures seamless delivery of complex enterprise projects.',
-      image: ''
+      image: placeholderImage
     },
     {
       name: 'Ganesh.K',
