@@ -149,31 +149,6 @@ const About: React.FC<AboutProps> = ({ darkMode }) => {
         <div className={`mt-20 p-12 rounded-2xl text-center ${
           darkMode ? 'bg-gradient-to-r from-slate-800 to-slate-700' : 'bg-gradient-to-r from-slate-50 to-slate-100'
         }`}>
-          <h3 className={`text-3xl font-bold mb-8 ${
-            darkMode ? 'text-white' : 'text-slate-900'
-          }`}>
-            By the Numbers
-          </h3>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {[
-              { value: '2025', label: 'Founded' },
-              { value: '10+', label: 'Projects' },
-              { value: '99%', label: 'Client Satisfaction' }
-            ].map((stat, index) => (
-              <div key={index}>
-                <div className={`text-4xl font-bold mb-2 ${
-                  darkMode ? 'text-white' : 'text-slate-900'
-                }`}>
-                  {stat.value}
-                </div>
-                <div className={`text-sm ${
-                  darkMode ? 'text-slate-400' : 'text-slate-600'
-                }`}>
-                  {stat.label}
-                </div>
-              </div>
-            ))}
-          </div>
         </div>
       </div>
     </section>
