@@ -29,29 +29,6 @@ const About: React.FC<AboutProps> = ({ darkMode }) => {
     }
   ];
 
-  const achievements = [
-    {
-      icon: Award,
-      title: 'Industry Recognition',
-      items: ['Gartner Magic Quadrant Leader', 'Forbes AI Company of the Year', 'MIT Technology Review Innovator']
-    },
-    {
-      icon: Users,
-      title: 'Expert Team',
-      items: ['200+ AI/ML Engineers', '50+ PhD Researchers', '24/7 Global Support']
-    },
-    {
-      icon: Globe,
-      title: 'Global Presence',
-      items: ['15 Global Offices', '50+ Countries Served', '24/7 Operations']
-    },
-    {
-      icon: Shield,
-      title: 'Security & Compliance',
-      items: ['SOC 2 Type II Certified', 'GDPR Compliant', 'ISO 27001 Certified']
-    }
-  ];
-
   return (
     <section id="about" className={`py-24 ${
       darkMode ? 'bg-slate-900' : 'bg-white'
