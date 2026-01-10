@@ -1,0 +1,69 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnpm
+/pnpm-lock.yaml
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# local env files
+.env*.local
+.env
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+# next.js
+/.next/
+/out/
+
+# turbo
+.turbo
+
+# cypress
+/cypress/videos/
+/cypress/screenshots/
+
+# storybook
+/storybook-static
+
+# gatsby
+.cache/
+public
+
+# svelte
+.svelte-kit
+
+# drizzle
+/drizzle/
+
+# Log files
+*.log
+logs
+*.log.*
+
+# Test results
+/coverage
+/reports
+
+# Editor directories and files
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
