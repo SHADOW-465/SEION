@@ -10,6 +10,8 @@ import Footer from "@/components/footer"
 import TypingPromptInput from "@/components/typing-prompt-input"
 import FramerSpotlight from "@/components/framer-spotlight"
 import CssGridBackground from "@/components/css-grid-background"
+import TrustSignals from "@/components/trust-signals"
+import HowItWorks from "@/components/how-it-works"
 import FeaturesSection from "@/components/features-section"
 import ProjectsSlideshow from "@/components/projects-slideshow"
 import StructuredData from "@/components/structured-data"
@@ -25,7 +27,7 @@ export default function Home() {
   const handleEmailSubscription = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubscribing(true)
-    
+
     try {
       if (!supabase) {
         throw new Error("Supabase client is not available.")
@@ -70,10 +72,10 @@ export default function Home() {
                 Premium Enterprise AI Solution
               </div>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter mb-6">
-                The <span className="seion-metallic-text">AI-Powered Software Solutions Provider</span> for India's Growing Businesses
+                <span className="seion-metallic-text">Reduce Costs.</span> Prevent Failures. Automate Operations.
               </h1>
               <p className="text-xl text-muted-foreground md:text-2xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed max-w-3xl mb-12">
-                SEION delivers custom web development, smart automation, IoT integration, and scalable AI tools—all built to suit your unique business needs at a price that works for you.
+                AI & IoT automation systems for factories, healthcare, agriculture, and infrastructure.
               </p>
 
               {/* Email Subscription */}
@@ -102,25 +104,31 @@ export default function Home() {
               </form>
 
               <div className="flex flex-wrap justify-center gap-4 mt-8">
-                <Button 
+                <Button
                   className="flex items-center gap-3 px-6 py-3 seion-button text-black font-medium rounded-xl border-0 relative overflow-hidden group"
                   onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
                 >
                   <div className="absolute inset-0 bg-gradient-to-r from-seion-300/0 via-white/30 to-seion-300/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 transform translate-x-[-100%] group-hover:translate-x-[100%]"></div>
                   <Bot className="h-5 w-5 text-black relative z-10" />
-                  <span className="relative z-10">Connect with Our Experts</span>
+                  <span className="relative z-10">Get Free Automation Audit</span>
                 </Button>
-                <Button 
-                  variant="outline" 
+                <Button
+                  variant="outline"
                   className="px-6 py-3 rounded-xl border-2 border-primary/20 bg-transparent hover:bg-primary/10 text-foreground font-medium"
-                  onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
+                  onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
                 >
-                  View Our Projects
+                  Book Demo
                 </Button>
               </div>
             </div>
           </div>
         </section>
+
+        {/* Trust Signals Section */}
+        <TrustSignals />
+
+        {/* How It Works Section */}
+        <HowItWorks />
 
         {/* Services Section */}
         <FeaturesSection />
@@ -150,19 +158,19 @@ export default function Home() {
                 <div className="space-y-4">
                   <div className="flex items-center gap-2">
                     <Bot className="h-5 w-5 text-primary" />
-                    <span>Custom AI automation solutions</span>
+                    <span>Free Automation Audit</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <Factory className="h-5 w-5 text-primary" />
-                    <span>Industry-specific implementations</span>
+                    <span>Request Demo</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <TrendingUp className="h-5 w-5 text-primary" />
-                    <span>Scalable and affordable solutions</span>
+                    <span>Get ROI Estimate</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <Cog className="h-5 w-5 text-primary" />
-                    <span>End-to-end support and maintenance</span>
+                    <span>Schedule Consultation</span>
                   </div>
                 </div>
                 <div className="pt-4">

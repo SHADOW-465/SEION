@@ -49,13 +49,14 @@ export default function TeamSection() {
       linkedin: "https://www.linkedin.com/in/dharsanarunkumar/",
     },
     {
-      name: "kirthika",
-      role: "Chief Creative officer (CCO)",
+      name: "Kirthika",
+      role: "Chief Creative Officer (CCO)",
       avatar: "KR",
       description:
-        "drives the company’s creative vision, shaping brand identity, design, and innovation strategies. They ensure every idea, campaign, and product reflects the company’s values, connects with audiences, and sets the brand apart in the market",
+        "Drives the company’s creative vision, shaping brand identity, design, and innovation strategies. She ensures every idea, campaign, and product reflects the company’s values, connects with audiences, and sets the brand apart in the market with award-winning designs.",
       specialties: ["Brand Identity", "User Experience", "Innovation Strategies"],
       accentColor: "rgba(34, 197, 94, 0.5)",
+      linkedin: "https://www.linkedin.com/",
     },
   ]
 

@@ -107,59 +107,59 @@ export default function ContactForm() {
           <div className="grid grid-cols-2 gap-4">
             <div className="space-y-2">
               <Label htmlFor="firstName">First Name</Label>
-              <Input 
-                id="firstName" 
+              <Input
+                id="firstName"
                 name="firstName"
-                placeholder="Rajesh" 
+                placeholder="Rajesh"
                 value={formData.firstName}
                 onChange={handleInputChange}
-                required 
+                required
               />
             </div>
             <div className="space-y-2">
               <Label htmlFor="lastName">Last Name</Label>
-              <Input 
-                id="lastName" 
+              <Input
+                id="lastName"
                 name="lastName"
-                placeholder="Kumar" 
+                placeholder="Kumar"
                 value={formData.lastName}
                 onChange={handleInputChange}
-                required 
+                required
               />
             </div>
           </div>
           <div className="space-y-2">
             <Label htmlFor="email">Work Email</Label>
-            <Input 
-              id="email" 
+            <Input
+              id="email"
               name="email"
-              type="email" 
-              placeholder="rajesh.kumar@company.com" 
+              type="email"
+              placeholder="rajesh.kumar@company.com"
               value={formData.email}
               onChange={handleInputChange}
-              required 
+              required
             />
           </div>
           <div className="space-y-2">
             <Label htmlFor="company">Company/Organization</Label>
-            <Input 
-              id="company" 
+            <Input
+              id="company"
               name="company"
-              placeholder="Tata Industries" 
+              placeholder="Tata Industries"
               value={formData.company}
               onChange={handleInputChange}
-              required 
+              required
             />
           </div>
           <div className="space-y-2">
             <Label htmlFor="role">Your Role</Label>
-            <Input 
-              id="role" 
+            <Input
+              id="role"
               name="role"
-              placeholder="Operations Manager, CTO, etc." 
+              placeholder="Operations Manager, CTO, etc."
               value={formData.role}
               onChange={handleInputChange}
-              required 
+              required
             />
           </div>
           <div className="space-y-2">
@@ -181,17 +181,17 @@ export default function ContactForm() {
           </div>
           <div className="space-y-2">
             <Label htmlFor="message">What automation challenges are you facing?</Label>
-            <Textarea 
-              id="message" 
+            <Textarea
+              id="message"
               name="message"
-              placeholder="Tell us about your specific automation needs, current challenges, and goals..." 
-              rows={4} 
+              placeholder="Tell us about your specific automation needs, current challenges, and goals..."
+              rows={4}
               value={formData.message}
               onChange={handleInputChange}
             />
           </div>
           <Button type="submit" className="w-full seion-button text-black font-medium" disabled={isSubmitting}>
-            {isSubmitting ? "Submitting..." : "Get AI Automation Consultation"}
+            {isSubmitting ? "Submitting..." : "Schedule Consultation"}
           </Button>
           <p className="text-xs text-muted-foreground text-center">
             By submitting this form, you agree to our privacy policy and terms of service.

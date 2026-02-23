@@ -199,7 +199,7 @@ export default function ProjectsSlideshow() {
   const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
-    
+
     try {
       if (!supabase) {
         throw new Error("Supabase client is not available.")
@@ -254,19 +254,19 @@ export default function ProjectsSlideshow() {
         <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
           <div className="space-y-2">
             <div className="inline-block rounded-lg bg-primary/10 px-3 py-1 text-sm text-primary mb-2">
-              Our Projects
+              Case Studies
             </div>
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-              Portfolio Showcase
+              Proven Impact & Results
             </h2>
             <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl">
-              Explore our comprehensive portfolio of AI solutions, IoT implementations, and automation projects.
+              Explore our case studies of AI solutions, IoT implementations, and automation projects delivering measurable ROI.
             </p>
           </div>
         </div>
 
         <div className="relative max-w-4xl mx-auto">
-          <div 
+          <div
             className="relative overflow-hidden rounded-xl"
             onMouseEnter={() => setIsAutoPlaying(false)}
             onMouseLeave={() => setIsAutoPlaying(true)}
@@ -350,11 +350,10 @@ export default function ProjectsSlideshow() {
             {allProjects.map((_, index) => (
               <button
                 key={index}
-                className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                  index === currentIndex 
-                    ? 'bg-primary w-8' 
+                className={`w-2 h-2 rounded-full transition-all duration-300 ${index === currentIndex
+                    ? 'bg-primary w-8'
                     : 'bg-muted-foreground/30 hover:bg-muted-foreground/50'
-                }`}
+                  }`}
                 onClick={() => goToProject(index)}
               />
             ))}
@@ -362,7 +361,7 @@ export default function ProjectsSlideshow() {
 
           {/* Project Counter */}
           <div className="text-center mt-4 text-sm text-muted-foreground">
-            {currentIndex + 1} of {allProjects.length} projects
+            {currentIndex + 1} of {allProjects.length} case studies
           </div>
 
           {/* Contact Form Modal */}
@@ -375,7 +374,7 @@ export default function ProjectsSlideshow() {
                     ✕
                   </Button>
                 </div>
-                
+
                 {submitMessage ? (
                   <div className="text-center py-8">
                     <p className={`text-sm ${submitMessage.includes('error') ? 'text-red-500' : 'text-green-500'}`}>
@@ -395,7 +394,7 @@ export default function ProjectsSlideshow() {
                         className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
                       />
                     </div>
-                    
+
                     <div>
                       <label className="block text-sm font-medium mb-1">Email *</label>
                       <input
@@ -407,7 +406,7 @@ export default function ProjectsSlideshow() {
                         className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
                       />
                     </div>
-                    
+
                     <div>
                       <label className="block text-sm font-medium mb-1">Company</label>
                       <input
@@ -418,7 +417,7 @@ export default function ProjectsSlideshow() {
                         className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
                       />
                     </div>
-                    
+
                     <div>
                       <label className="block text-sm font-medium mb-1">Interested Project</label>
                       <input
@@ -430,7 +429,7 @@ export default function ProjectsSlideshow() {
                         className="w-full px-3 py-2 border rounded-lg bg-muted"
                       />
                     </div>
-                    
+
                     <div>
                       <label className="block text-sm font-medium mb-1">Message</label>
                       <textarea
@@ -442,7 +441,7 @@ export default function ProjectsSlideshow() {
                         placeholder="Tell us about your requirements..."
                       />
                     </div>
-                    
+
                     <Button type="submit" className="w-full seion-button text-black" disabled={isSubmitting}>
                       {isSubmitting ? 'Submitting...' : 'Submit Inquiry'}
                     </Button>
