@@ -6,7 +6,10 @@
       "Bash(npm uninstall:*)",
       "Bash(npm run:*)",
       "Bash(git add:*)",
-      "Bash(git commit -m ':*)"
+      "Bash(git commit -m ':*)",
+      "Bash(npm list:*)",
+      "Bash(curl -s http://localhost:3000)",
+      "Bash(git commit:*)"
     ]
   }
 }
