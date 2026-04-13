@@ -1,103 +1,34 @@
-import type { Config } from "tailwindcss"
+import type { Config } from 'tailwindcss';
 
-const config = {
-  darkMode: ["class"],
+const config: Config = {
   content: [
-    "./pages/**/*.{ts,tsx}",
-    "./components/**/*.{ts,tsx}",
-    "./app/**/*.{ts,tsx}",
-    "./src/**/*.{ts,tsx}",
-    "*.{js,ts,jsx,tsx,mdx}",
+    './pages/**/*.{js,ts,jsx,tsx,mdx}',
+    './components/**/*.{js,ts,jsx,tsx,mdx}',
+    './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
-  prefix: "",
   theme: {
-    container: {
-      center: true,
-      padding: "2rem",
-      screens: {
-        "2xl": "1400px",
-      },
-    },
     extend: {
       colors: {
-        border: "hsl(var(--border))",
-        input: "hsl(var(--input))",
-        ring: "hsl(var(--ring))",
-        background: "hsl(var(--background))",
-        foreground: "hsl(var(--foreground))",
-        primary: {
-          DEFAULT: "#FFD700", // Bright gold from logo
-          foreground: "#000000",
-        },
-        secondary: {
-          DEFAULT: "hsl(var(--secondary))",
-          foreground: "hsl(var(--secondary-foreground))",
-        },
-        destructive: {
-          DEFAULT: "hsl(var(--destructive))",
-          foreground: "hsl(var(--destructive-foreground))",
-        },
-        muted: {
-          DEFAULT: "hsl(var(--muted))",
-          foreground: "hsl(var(--muted-foreground))",
-        },
-        accent: {
-          DEFAULT: "hsl(var(--accent))",
-          foreground: "hsl(var(--accent-foreground))",
-        },
-        popover: {
-          DEFAULT: "hsl(var(--popover))",
-          foreground: "hsl(var(--popover-foreground))",
-        },
-        card: {
-          DEFAULT: "hsl(var(--card))",
-          foreground: "hsl(var(--card-foreground))",
-        },
-        seion: {
-          50: "#FFFEF7",
-          100: "#FFFACD", // Light cream
-          200: "#FFF8DC", // Cornsilk
-          300: "#FFEC8C", // Light gold
-          400: "#FFD700", // Gold (main brand color)
-          500: "#FFA500", // Orange gold
-          600: "#FF8C00", // Dark orange
-          700: "#DAA520", // Goldenrod
-          800: "#B8860B", // Dark goldenrod
-          900: "#8B6914", // Dark gold
-        },
+        void:    '#0C0C0E',
+        cream:   '#F5F2EB',
+        surface: '#141416',
+        gold:    '#D4952A',
+        green:   '#22C47A',
+        danger:  '#E04040',
+      },
+      fontFamily: {
+        serif: ['Instrument Serif', 'Georgia', 'serif'],
+        sans:  ['DM Sans', 'system-ui', 'sans-serif'],
+        mono:  ['JetBrains Mono', 'Courier New', 'monospace'],
       },
       borderRadius: {
-        lg: "var(--radius)",
-        md: "calc(var(--radius) - 2px)",
-        sm: "calc(var(--radius) - 4px)",
-      },
-      keyframes: {
-        "accordion-down": {
-          from: { height: "0" },
-          to: { height: "var(--radix-accordion-content-height)" },
-        },
-        "accordion-up": {
-          from: { height: "var(--radix-accordion-content-height)" },
-          to: { height: "0" },
-        },
-        "shimmer": {
-          "0%": { transform: "translateX(-100%)" },
-          "100%": { transform: "translateX(100%)" },
-        },
-        "glow": {
-          "0%, 100%": { boxShadow: "0 0 20px rgba(255, 215, 0, 0.3)" },
-          "50%": { boxShadow: "0 0 30px rgba(255, 215, 0, 0.6)" },
-        },
-      },
-      animation: {
-        "accordion-down": "accordion-down 0.2s ease-out",
-        "accordion-up": "accordion-up 0.2s ease-out",
-        "shimmer": "shimmer 2s infinite",
-        "glow": "glow 2s ease-in-out infinite alternate",
+        card:   '16px',
+        button: '8px',
+        pill:   '9999px',
       },
     },
   },
   plugins: [],
-} satisfies Config
+};
 
-export default config
+export default config;

@@ -2,184 +2,149 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  :root {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 51 100% 50%; /* Gold */
-    --primary-foreground: 0 0% 0%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 51 100% 50%;
-
-    --radius: 0.5rem;
-  }
+/* ─── Design Tokens ─────────────────────────────────────── */
+:root {
+  --color-void:         #0C0C0E;
+  --color-cream:        #F5F2EB;
+  --color-surface:      #141416;
+  --color-gold:         #D4952A;
+  --color-gold-deep:    #8a5f12;
+  --color-gold-light:   #f5dfa0;
+  --color-green:        #22C47A;
+  --color-red:          #E04040;
+  --color-border-dark:  rgba(255, 255, 255, 0.08);
+  --color-border-light: rgba(0, 0, 0, 0.08);
+  --font-serif:         'Instrument Serif', Georgia, serif;
+  --font-sans:          'DM Sans', system-ui, sans-serif;
+  --font-mono:          'JetBrains Mono', 'Courier New', monospace;
+  --radius-card:        16px;
+  --radius-button:      8px;
+  --radius-pill:        9999px;
+  --ease-entrance:      cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-morph:         cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --ease-spring:        cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
-@layer base {
-  * {
-    @apply border-border;
-  }
-  body {
-    @apply bg-background text-foreground;
-  }
+/* ─── Base ──────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: auto; }
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-void);
+  color: #ffffff;
+  -webkit-font-smoothing: antialiased;
+  cursor: none;
 }
 
-/* SEION Brand Gradient - matching the logo */
-.seion-gradient {
-  background: linear-gradient(135deg, #FFD700 0%, #FFA500 25%, #FF8C00 50%, #DAA520 75%, #B8860B 100%);
+@media (pointer: coarse) {
+  body { cursor: auto; }
 }
 
-.seion-gradient-text {
-  background: linear-gradient(135deg, #FFD700 0%, #FFA500 25%, #FF8C00 50%, #DAA520 75%, #B8860B 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+/* ─── Grain Overlay ─────────────────────────────────────── */
+.grain-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 256px 256px;
 }
 
-/* Premium metallic effect */
-.seion-metallic {
-  background: linear-gradient(135deg, 
-    #FFD700 0%, 
-    #FFEC8C 15%, 
-    #FFA500 30%, 
-    #FFD700 45%, 
-    #FF8C00 60%, 
-    #FFA500 75%, 
-    #DAA520 90%, 
-    #B8860B 100%
+/* ─── Gold Shimmer ──────────────────────────────────────── */
+.shimmer-gold {
+  background: linear-gradient(
+    90deg,
+    #8a5f12 0%,
+    #D4952A 30%,
+    #f5dfa0 50%,
+    #D4952A 70%,
+    #8a5f12 100%
   );
-  background-size: 200% 200%;
-  animation: shimmer 3s ease-in-out infinite;
-}
-
-.seion-metallic-text {
-  background: linear-gradient(135deg, 
-    #FFD700 0%, 
-    #FFEC8C 15%, 
-    #FFA500 30%, 
-    #FFD700 45%, 
-    #FF8C00 60%, 
-    #FFA500 75%, 
-    #DAA520 90%, 
-    #B8860B 100%
-  );
-  background-size: 200% 200%;
+  background-size: 200% auto;
   -webkit-background-clip: text;
-  background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: shimmer 3s ease-in-out infinite;
+  background-clip: text;
+  animation: shimmer-sweep 3s linear infinite;
 }
 
-/* Grid background with SEION colors */
-.grid-background {
-  background-image: linear-gradient(to right, rgba(255, 215, 0, 0.2) 0.5px, transparent 0.5px),
-    linear-gradient(to bottom, rgba(255, 215, 0, 0.2) 0.5px, transparent 0.5px) !important;
-  background-size: 80px 80px !important;
+/* ─── Keyframes ─────────────────────────────────────────── */
+@keyframes shimmer-sweep {
+  from { background-position: 0% center; }
+  to   { background-position: 200% center; }
 }
 
-.grid-gradient {
-  background: radial-gradient(70% 70% at 50% 50%, transparent 0%, rgba(255, 215, 0, 0.05) 100%) !important;
+@keyframes ping-pulse {
+  0%   { transform: scale(1); opacity: 0.6; }
+  100% { transform: scale(2.4); opacity: 0; }
 }
 
-/* Dark mode adjustments */
-.grid-background {
-  background-image: linear-gradient(to right, rgba(255, 215, 0, 0.3) 0.5px, transparent 0.5px),
-    linear-gradient(to bottom, rgba(255, 215, 0, 0.3) 0.5px, transparent 0.5px) !important;
-  background-size: 80px 80px !important;
+@keyframes cursor-blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
 }
 
-.grid-gradient {
-  background: radial-gradient(70% 70% at 50% 50%, transparent 0%, rgba(255, 215, 0, 0.08) 100%) !important;
+@keyframes marquee-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
 }
 
-/* Premium button effects */
-.seion-button {
-  background: linear-gradient(135deg, #FFD700 0%, #FFA500 50%, #FF8C00 100%);
-  box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
-  transition: all 0.3s ease;
+@keyframes ring-rotate-cw {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@keyframes ring-rotate-ccw {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(-360deg); }
+}
+
+@keyframes laser-scan {
+  from { transform: translateX(-100%); }
+  to   { transform: translateX(100%); }
+}
+
+@keyframes fadeSlideIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scaleInX {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+
+/* ─── Utilities ─────────────────────────────────────────── */
+.font-serif  { font-family: var(--font-serif); }
+.font-sans   { font-family: var(--font-sans); }
+.font-mono   { font-family: var(--font-mono); }
+
+.section-label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  opacity: 0.6;
+}
+
+/* ─── Fill-Slide Button ─────────────────────────────────── */
+.btn-fill-slide {
   position: relative;
   overflow: hidden;
+  isolation: isolate;
 }
-
-.seion-button:hover {
-  background: linear-gradient(135deg, #FFEC8C 0%, #FFD700 50%, #FFA500 100%);
-  box-shadow: 0 6px 25px rgba(255, 215, 0, 0.5);
-  transform: translateY(-2px);
-}
-
-.seion-button::before {
+.btn-fill-slide::before {
   content: '';
   position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-  transition: left 0.5s;
+  inset: 0;
+  background: rgba(255,255,255,0.12);
+  transform: translateX(-100%);
+  transition: transform 300ms var(--ease-morph);
+  z-index: -1;
 }
-
-.seion-button:hover::before {
-  left: 100%;
-}
-
-/* Card styling improvements */
-.card {
-  background-color: hsl(var(--card));
-  border-color: hsl(var(--border));
-}
-
-.card-description {
-  color: hsl(var(--muted-foreground));
-}
-
-/* Frosted glass effect with SEION colors */
-.frost-glass {
-  @apply backdrop-blur-md border shadow-sm;
-  background: rgba(0, 0, 0, 0.3);
-  border: 1px solid rgba(255, 215, 0, 0.3);
-  box-shadow: 0 4px 20px rgba(255, 215, 0, 0.2);
-}
-
-/* Input focus effect */
-.frost-glass-input:focus {
-  border-color: rgba(255, 215, 0, 0.5);
-  box-shadow: 0 0 0 2px rgba(255, 215, 0, 0.2);
-}
-
-/* Shimmer animation for metallic effects */
-@keyframes shimmer {
-  0% { background-position: 200% 0; }
-  100% { background-position: -200% 0; }
-}
-
-/* Glow effect for premium elements */
-.seion-glow {
-  box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
-  animation: glow 2s ease-in-out infinite alternate;
-}
-
-@keyframes glow {
-  from { box-shadow: 0 0 20px rgba(255, 215, 0, 0.3); }
-  to { box-shadow: 0 0 30px rgba(255, 215, 0, 0.6); }
+.btn-fill-slide:hover::before {
+  transform: translateX(0);
 }
