@@ -16,7 +16,7 @@ export function DemoTab2() {
   }, []);
 
   const onMouseMove = (e: React.MouseEvent) => { if (dragging) updatePct(e.clientX); };
-  const onTouchMove = (e: React.TouchEvent) => updatePct(e.touches[0].clientX);
+  const onTouchMove = (e: React.TouchEvent) => { if (dragging) updatePct(e.touches[0].clientX); };
 
   return (
     <div

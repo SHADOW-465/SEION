@@ -25,14 +25,17 @@ export function ServiceCard02() {
       if (charIndex <= msg.length) {
         setDisplayText(msg.slice(0, charIndex));
         charIndex++;
+        if (timeoutRef.current) clearTimeout(timeoutRef.current);
         timeoutRef.current = setTimeout(typeChar, 44);
       } else {
+        if (timeoutRef.current) clearTimeout(timeoutRef.current);
         timeoutRef.current = setTimeout(() => {
           setMsgIndex((i) => (i + 1) % messages.length);
         }, 2400);
       }
     };
 
+    if (timeoutRef.current) clearTimeout(timeoutRef.current);
     timeoutRef.current = setTimeout(typeChar, 44);
     return () => { if (timeoutRef.current) clearTimeout(timeoutRef.current); };
   }, [msgIndex]);
