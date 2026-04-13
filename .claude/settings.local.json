@@ -9,7 +9,28 @@
       "Bash(git commit -m ':*)",
       "Bash(npm list:*)",
       "Bash(curl -s http://localhost:3000)",
-      "Bash(git commit:*)"
+      "Bash(git commit:*)",
+      "Bash(npx tsc:*)",
+      "Bash(node /tmp/verify.js)",
+      "Bash(python /tmp/dashboard_check.py)",
+      "Bash(python /tmp/result_check.py)",
+      "Bash(git check-ignore:*)",
+      "Bash(bash /tmp/final_check.sh)",
+      "Bash(python /tmp/precise_count.py)",
+      "Bash(python /tmp/result_structure.py)",
+      "Bash(bash /tmp/code_quality.sh)",
+      "Bash(bash /tmp/final_summary.sh)",
+      "Bash(echo \"EXIT:$?\")",
+      "Bash(echo \"EXIT: $?\")",
+      "Bash(npx next:*)",
+      "Bash(git -C \"C:\\\\Users\\\\acer\\\\Documents\\\\projects\\\\SEION\" add components/services/ components/demo/ app/page.tsx)",
+      "Bash(git -C 'C:\\\\Users\\\\acer\\\\Documents\\\\projects\\\\SEION' commit -m ':*)",
+      "Bash(git -C \"C:\\\\Users\\\\acer\\\\Documents\\\\projects\\\\SEION\" add components/process/ app/page.tsx app/globals.css)",
+      "Bash(git -C \"C:\\\\Users\\\\acer\\\\Documents\\\\projects\\\\SEION\" add components/sections/Manifesto.tsx components/sections/Industries.tsx components/sections/About.tsx app/page.tsx)",
+      "Bash(npx --yes tsc --noEmit --project \"C:/Users/acer/Documents/projects/SEION/tsconfig.json\")",
+      "Bash(npx --version)",
+      "Bash(git -C /c/Users/acer/Documents/projects/SEION add components/process/ProcessCard.tsx components/sections/Contact.tsx components/demo/index.tsx components/hero/index.tsx)",
+      "Bash(git -C /c/Users/acer/Documents/projects/SEION commit -m \"fix: mobile responsiveness across all sections\")"
     ]
   }
 }
