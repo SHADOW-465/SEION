@@ -4,6 +4,10 @@ import { ProofStrip } from '@/components/sections/ProofStrip';
 import { Problem } from '@/components/sections/Problem';
 import { Services } from '@/components/services';
 import { Demo } from '@/components/demo';
+import { Process } from '@/components/process';
+import { Manifesto } from '@/components/sections/Manifesto';
+import { Industries } from '@/components/sections/Industries';
+import { About } from '@/components/sections/About';
 
 export default function Home() {
   return (
@@ -14,6 +18,10 @@ export default function Home() {
       <Problem />
       <Services />
       <Demo />
+      <Process />
+      <Manifesto />
+      <Industries />
+      <About />
     </main>
   );
 }
