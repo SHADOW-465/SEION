@@ -92,11 +92,11 @@ export function Contact() {
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <input className={inputBase} placeholder="Name"    value={form.name}    onChange={update('name')}    required style={{ borderColor: 'var(--color-border-light)' }} />
                   <input className={inputBase} placeholder="Company" value={form.company} onChange={update('company')} required style={{ borderColor: 'var(--color-border-light)' }} />
                 </div>
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <input className={inputBase} type="email" placeholder="Email" value={form.email} onChange={update('email')} required style={{ borderColor: 'var(--color-border-light)' }} />
                   <input className={inputBase} type="tel"   placeholder="Phone" value={form.phone} onChange={update('phone')} required style={{ borderColor: 'var(--color-border-light)' }} />
                 </div>

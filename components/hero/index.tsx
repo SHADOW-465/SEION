@@ -11,7 +11,7 @@ export function Hero() {
       <div className="w-full max-w-7xl mx-auto px-6 lg:px-12">
         <div className="grid lg:grid-cols-[55fr_45fr] gap-12 lg:gap-16 items-center">
           <HeroText />
-          <div className="w-full">
+          <div className="hidden lg:block w-full">
             <HeroDashboard />
           </div>
         </div>

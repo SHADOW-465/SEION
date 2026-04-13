@@ -40,12 +40,12 @@ export function Demo() {
         </div>
 
         {/* Tab bar */}
-        <div className="flex gap-6 border-b mb-10" style={{ borderColor: 'rgba(255,255,255,0.08)' }}>
+        <div className="flex gap-4 border-b mb-10 overflow-x-auto" style={{ borderColor: 'rgba(255,255,255,0.08)' }}>
           {tabs.map((tab) => (
             <button
               key={tab.id}
               onClick={() => setActive(tab.id)}
-              className="relative pb-3 font-sans font-medium text-sm transition-all duration-200"
+              className="relative pb-3 font-sans font-medium text-sm transition-all duration-200 whitespace-nowrap"
               style={{ color: active === tab.id ? '#ffffff' : 'rgba(255,255,255,0.4)' }}
             >
               {tab.label}

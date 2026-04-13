@@ -15,7 +15,9 @@ export function ProcessCard({ step, title, body, svg }: ProcessCardProps) {
       style={{ background: 'var(--color-void)' }}
     >
       <div className="max-w-7xl w-full mx-auto px-6 lg:px-12">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+          {/* SVG on top for mobile */}
+          <div className="lg:hidden flex justify-center mb-4">{svg}</div>
           {/* Text */}
           <div className="flex flex-col gap-5">
             <div
@@ -32,8 +34,8 @@ export function ProcessCard({ step, title, body, svg }: ProcessCardProps) {
             </h3>
             <p className="font-sans text-white/60 text-base leading-relaxed max-w-md">{body}</p>
           </div>
-          {/* SVG */}
-          <div className="flex items-center justify-center">{svg}</div>
+          {/* SVG on right for desktop */}
+          <div className="hidden lg:flex items-center justify-center">{svg}</div>
         </div>
       </div>
     </div>
