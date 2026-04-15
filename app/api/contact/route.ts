@@ -31,6 +31,12 @@ export async function POST(req: NextRequest) {
   if (!isValidEmail(email)) return NextResponse.json({ error: 'Invalid email address' }, { status: 400 });
   if (!isValidPhone(phone)) return NextResponse.json({ error: 'Invalid phone number' }, { status: 400 });
 
+  // If Supabase is not configured, log and succeed gracefully (preview/demo mode)
+  if (!process.env.NEXT_PUBLIC_SUPABASE_URL || !process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY) {
+    console.log('[contact] Supabase not configured — submission logged only:', { name, company, email, industry });
+    return NextResponse.json({ success: true }, { status: 200 });
+  }
+
   const { error } = await supabase
     .from('contact_submissions')
     .insert([{
