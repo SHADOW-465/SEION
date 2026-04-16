@@ -70,17 +70,22 @@ body {
 .shimmer-gold {
   background: linear-gradient(
     90deg,
-    #8a5f12 0%,
-    #D4952A 30%,
-    #f5dfa0 50%,
-    #D4952A 70%,
-    #8a5f12 100%
+    #5a3a08 0%,
+    #b8760f 15%,
+    #e8a620 28%,
+    #ffd15e 42%,
+    #fff4c2 50%,
+    #ffd15e 58%,
+    #e8a620 72%,
+    #b8760f 85%,
+    #5a3a08 100%
   );
-  background-size: 200% auto;
+  background-size: 220% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  animation: shimmer-sweep 3s linear infinite;
+  animation: shimmer-sweep 2.8s linear infinite;
+  filter: drop-shadow(0 0 8px rgba(232,166,32,0.45));
 }
 
 /* ─── Keyframes ─────────────────────────────────────────── */

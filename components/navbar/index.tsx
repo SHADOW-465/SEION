@@ -42,8 +42,8 @@ export function Navbar() {
             href="/"
             className="shimmer-gold font-sans font-bold"
             style={{
-              fontSize: '18px',
-              letterSpacing: '0.08em',
+              fontSize: '22px',
+              letterSpacing: '0.12em',
               textDecoration: 'none',
               textTransform: 'uppercase',
             }}
