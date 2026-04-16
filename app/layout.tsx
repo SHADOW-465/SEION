@@ -1,8 +1,6 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import { GrainOverlay }   from '@/components/ui/GrainOverlay';
-import { CustomCursor }   from '@/components/ui/CustomCursor';
-import { LenisProvider }  from '@/components/ui/LenisProvider';
 
 export const metadata: Metadata = {
   title: 'SEION — AI Systems for Indian Business',
@@ -28,12 +26,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           rel="stylesheet"
         />
       </head>
-      <body>
-        <LenisProvider>
-          <GrainOverlay />
-          <CustomCursor />
-          {children}
-        </LenisProvider>
+      <body suppressHydrationWarning>
+        <GrainOverlay />
+        {children}
       </body>
     </html>
   );

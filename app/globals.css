@@ -18,11 +18,26 @@
   --font-sans:          'DM Sans', system-ui, sans-serif;
   --font-mono:          'JetBrains Mono', 'Courier New', monospace;
   --radius-card:        16px;
-  --radius-button:      8px;
+  --radius-button:      9999px;
   --radius-pill:        9999px;
   --ease-entrance:      cubic-bezier(0.16, 1, 0.3, 1);
   --ease-morph:         cubic-bezier(0.25, 0.46, 0.45, 0.94);
   --ease-spring:        cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* New teal accent system */
+  --color-teal:         #1a5c4a;
+  --color-teal-2:       #236b57;
+  --color-teal-light:   #d6ece5;
+
+  /* Ink scale (for text on cream) */
+  --color-ink-2:        #3d3c38;
+  --color-ink-3:        #8a8880;
+
+  /* Border */
+  --color-border:       #d8d4c8;
+
+  /* Surface (slightly darker cream for alternating sections) */
+  --color-surface-light: #ece9e1;
 }
 
 /* ─── Base ──────────────────────────────────────────────── */
@@ -32,14 +47,9 @@ html { scroll-behavior: auto; }
 
 body {
   font-family: var(--font-sans);
-  background-color: var(--color-void);
-  color: #ffffff;
+  background: var(--color-cream);
+  color: var(--color-void);
   -webkit-font-smoothing: antialiased;
-  cursor: none;
-}
-
-@media (pointer: coarse) {
-  body { cursor: auto; }
 }
 
 /* ─── Grain Overlay ─────────────────────────────────────── */
@@ -48,7 +58,7 @@ body {
   inset: 0;
   z-index: 9999;
   pointer-events: none;
-  opacity: 0.035;
+  opacity: 0.4;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
   background-repeat: repeat;
   background-size: 256px 256px;
@@ -147,4 +157,71 @@ body {
 }
 .btn-fill-slide:hover::before {
   transform: translateX(0);
+}
+
+/* ─── Ink Button ─────────────────────────────────────────── */
+.btn-ink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-void);
+  color: var(--color-cream);
+  border: 1.5px solid var(--color-void);
+  padding: 14px 32px;
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-radius: 2px;
+  text-decoration: none;
+  transition: background 0.2s, border-color 0.2s;
+  cursor: pointer;
+}
+.btn-ink:hover {
+  background: var(--color-teal);
+  border-color: var(--color-teal);
+}
+
+/* ─── Ghost Ink Button ───────────────────────────────────── */
+.btn-ghost-ink {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--color-ink-2, #3d3c38);
+  font-size: 13px;
+  font-weight: 400;
+  text-decoration: none;
+  transition: color 0.2s;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 14px 0;
+}
+.btn-ghost-ink:hover { color: var(--color-teal); }
+.btn-ghost-ink::after { content: '→'; margin-left: 4px; transition: transform 0.2s; display: inline-block; }
+.btn-ghost-ink:hover::after { transform: translateX(4px); }
+
+/* Gold loop background for pill buttons */
+.bg-gold-loop {
+  background: linear-gradient(
+    90deg,
+    #8a5f12 0%,
+    #D4952A 30%,
+    #f5dfa0 50%,
+    #D4952A 70%,
+    #8a5f12 100%
+  ) !important;
+  background-size: 200% auto !important;
+  animation: shimmer-sweep 3s linear infinite !important;
+  color: #0C0C0E !important; /* Force text to void */
+}
+
+/* Utility to hide scrollbar but keep functionality */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
