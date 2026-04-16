@@ -7,25 +7,27 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const line2Words = ['We', 'stay', 'until', 'it', 'works.', 'Then', 'we', 'stay', 'some', 'more.'];
-
 export function Manifesto() {
   const ref = useRef<HTMLElement>(null);
 
   useEffect(() => {
     if (!ref.current) return;
     const ctx = gsap.context(() => {
-      const spans = ref.current!.querySelectorAll('[data-word]');
+      const parts = ref.current!.querySelectorAll('[data-reveal]');
       gsap.fromTo(
-        spans,
-        { y: 16, opacity: 0 },
+        parts,
+        { y: 30, opacity: 0 },
         {
           y: 0,
           opacity: 1,
-          duration: 0.6,
-          ease: 'power3.out',
-          stagger: 0.055,
-          scrollTrigger: { trigger: ref.current, start: 'top 70%', once: true },
+          duration: 1,
+          ease: 'power4.out',
+          stagger: 0.2,
+          scrollTrigger: {
+            trigger: ref.current,
+            start: 'top 65%',
+            once: true,
+          },
         }
       );
     }, ref);
@@ -35,27 +37,35 @@ export function Manifesto() {
   return (
     <section
       ref={ref}
-      style={{ background: 'var(--color-gold)', padding: '6rem 0' }}
+      className="relative overflow-hidden"
+      style={{ background: 'var(--color-teal)', padding: '10rem 0' }}
     >
-      <div className="max-w-5xl mx-auto px-6 lg:px-12 flex flex-col gap-4">
-        <p className="font-sans text-void/80 text-lg">
-          Most AI companies sell you a product and leave you to figure out the rest.
-        </p>
-        <p
-          className="font-serif italic text-void leading-tight"
-          style={{ fontSize: 'clamp(2.25rem, 5vw, 3.5rem)' }}
-        >
-          {line2Words.map((word, i) => (
-            <span
-              key={i}
-              data-word
-              className="inline-block mr-[0.25em]"
-              style={{ opacity: 0 }}
-            >
-              {word}
-            </span>
-          ))}
-        </p>
+      {/* Background texture decor */}
+      <div 
+        className="absolute inset-0 opacity-[0.03] pointer-events-none"
+        style={{ 
+          backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)',
+          backgroundSize: '40px 40px'
+        }}
+      />
+
+      <div className="max-w-5xl mx-auto px-6 lg:px-12 flex flex-col gap-12 relative z-10">
+        <div data-reveal className="flex flex-col gap-4">
+          <span className="font-mono text-[10px] uppercase tracking-[0.3em]" style={{ color: 'rgba(255,255,255,0.5)' }}>Our Philosophy</span>
+          <p className="font-sans text-xl md:text-2xl max-w-2xl leading-relaxed" style={{ color: 'rgba(255,255,255,0.75)' }}>
+            Most AI companies focus on selling you a tool and leaving you to train your people.
+          </p>
+        </div>
+
+        <div data-reveal className="flex flex-col gap-2">
+          <p className="font-sans text-lg" style={{ color: 'rgba(255,255,255,0.75)' }}>We focus on:</p>
+          <h2
+            className="font-serif italic leading-[1.05]"
+            style={{ fontSize: 'clamp(3rem, 8vw, 6rem)', color: 'rgba(255,255,255,0.95)' }}
+          >
+            Building the <em style={{ color: 'rgba(255,255,255,0.95)' }}>Intelligence</em> that runs your business while you sleep.
+          </h2>
+        </div>
       </div>
     </section>
   );

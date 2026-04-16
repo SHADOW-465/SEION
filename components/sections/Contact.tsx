@@ -49,7 +49,7 @@ export function Contact() {
     <section
       id="contact"
       data-section-light
-      style={{ background: 'var(--color-cream)', padding: '7rem 0' }}
+      style={{ background: 'var(--color-surface-light)', padding: '7rem 0' }}
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <div className="grid lg:grid-cols-2 gap-16 items-start">
@@ -81,9 +81,9 @@ export function Contact() {
             {success ? (
               <div
                 className="rounded-card p-8 flex flex-col gap-3 items-start"
-                style={{ background: 'rgba(34,196,122,0.08)', border: '1px solid rgba(34,196,122,0.2)' }}
+                style={{ background: 'rgba(26,92,74,0.08)', border: '1px solid rgba(26,92,74,0.2)' }}
               >
-                <div className="font-mono text-xs uppercase tracking-wider" style={{ color: 'var(--color-green)' }}>
+                <div className="font-mono text-xs uppercase tracking-wider" style={{ color: 'var(--color-teal)' }}>
                   ✓ Booked
                 </div>
                 <p className="font-sans text-void font-semibold text-lg">

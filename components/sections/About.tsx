@@ -19,7 +19,7 @@ export function About() {
         <div className="grid lg:grid-cols-2 gap-16 items-start">
           {/* Text */}
           <div className="flex flex-col gap-4">
-            <SectionLabel text="About SEION" />
+            <SectionLabel text="About SEION" light={false} />
             <h2
               className="font-sans font-bold text-white"
               style={{ fontSize: 'clamp(1.75rem, 3.5vw, 2.5rem)', lineHeight: 1.15 }}
@@ -55,7 +55,7 @@ export function About() {
               >
                 <span
                   className="font-mono text-xs uppercase tracking-wider w-28 shrink-0 pt-0.5"
-                  style={{ color: 'var(--color-gold)' }}
+                  style={{ color: 'var(--color-teal-light)' }}
                 >
                   {row.label}
                 </span>

@@ -14,7 +14,7 @@ export function Footer() {
         <div className="flex flex-col md:flex-row justify-between gap-10 pb-10 border-b" style={{ borderColor: 'var(--color-border-dark)' }}>
           <div className="flex flex-col gap-2">
             <span className="shimmer-gold font-sans font-bold text-2xl tracking-tight">SEION</span>
-            <p className="font-sans text-sm text-white/40">AI systems for Indian business.</p>
+            <p className="font-serif italic" style={{ fontSize: '13px', color: 'rgba(255,255,255,0.4)', marginTop: '4px' }}>AI systems for Indian business</p>
           </div>
 
           <div className="flex gap-16">
@@ -46,8 +46,8 @@ export function Footer() {
           <p className="font-mono text-xs text-white/25">© 2026 SEION. All rights reserved.</p>
           <div className="flex items-center gap-2">
             <div className="relative">
-              <div className="w-2 h-2 rounded-full" style={{ background: 'var(--color-green)' }} />
-              <div className="absolute inset-0 rounded-full" style={{ background: 'var(--color-green)', animation: 'ping-pulse 2s ease-out infinite' }} />
+              <div className="w-2 h-2 rounded-full" style={{ background: 'var(--color-teal)' }} />
+              <div className="absolute inset-0 rounded-full" style={{ background: 'var(--color-teal)', animation: 'ping-pulse 2s ease-out infinite' }} />
             </div>
             <span className="font-mono text-xs text-white/40">Systems Operational</span>
           </div>

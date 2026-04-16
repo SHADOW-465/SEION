@@ -46,8 +46,8 @@ export function ProofStrip() {
       id="proof-strip"
       className="border-y"
       style={{
-        background: 'var(--color-void)',
-        borderColor: 'var(--color-border-dark)',
+        background: 'var(--color-surface-light)',
+        borderColor: 'var(--color-border)',
         padding: '1.5rem 0',
       }}
     >
@@ -56,11 +56,11 @@ export function ProofStrip() {
         <div className="flex items-center gap-10">
           {counters.map((c, i) => (
             <div key={c.label} className="flex flex-col items-center md:items-start">
-              <div className="font-mono font-medium text-white text-2xl">
+              <div className="font-mono font-medium text-2xl" style={{ color: 'var(--color-void)' }}>
                 <span ref={(el: HTMLSpanElement | null) => { counterRefs.current[i] = el; }}>0</span>
                 {c.suffix}
               </div>
-              <div className="font-mono text-white/40 text-xs uppercase tracking-wider">
+              <div className="font-mono text-xs uppercase tracking-wider" style={{ color: 'var(--color-ink-3)' }}>
                 {c.label}
               </div>
             </div>
@@ -83,9 +83,9 @@ export function ProofStrip() {
             style={{ animation: 'marquee-scroll 28s linear infinite' }}
           >
             {[...sectors, ...sectors].map((s, i) => (
-              <span key={i} className="font-mono text-xs text-white/40 uppercase tracking-wider">
+              <span key={i} className="font-mono text-xs uppercase tracking-wider" style={{ color: 'var(--color-ink-3)' }}>
                 {s}
-                <span className="mx-3 text-white/20">◆</span>
+                <span className="mx-3" style={{ color: 'var(--color-border)' }}>◆</span>
               </span>
             ))}
           </div>

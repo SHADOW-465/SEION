@@ -21,26 +21,31 @@ export function Problem() {
 
   return (
     <section
-      style={{ background: 'var(--color-void)', padding: '7rem 0' }}
+      style={{ background: 'var(--color-cream)', padding: '7rem 0' }}
     >
       <div
         ref={ref}
         className="max-w-[720px] mx-auto px-6 lg:px-12 flex flex-col gap-8"
       >
-        <p
+        <div
           data-fade
-          className="font-sans text-white/70 text-base leading-[1.85] lg:text-lg"
+          style={{ borderLeft: '3px solid var(--color-teal)', paddingLeft: '32px' }}
         >
-          Most Indian businesses are drowning in data they can&apos;t read. Scattered across
-          Tally, WhatsApp, handwritten registers, and decade-old Excel files — your data
-          exists. But nobody has time to read it, let alone act on it. Every decision still
-          runs on memory and instinct. Every month-end report costs 14 hours of manual work.
-          Every growth opportunity gets missed because nobody saw it coming.
-        </p>
+          <p
+            className="font-sans text-base leading-[1.85] lg:text-lg"
+            style={{ color: 'var(--color-ink-2)' }}
+          >
+            Most Indian businesses are drowning in data they can&apos;t read. Scattered across
+            Tally, WhatsApp, handwritten registers, and decade-old Excel files — your data
+            exists. But nobody has time to read it, let alone act on it. Every decision still
+            runs on memory and instinct. Every month-end report costs 14 hours of manual work.
+            Every growth opportunity gets missed because nobody saw it coming.
+          </p>
+        </div>
         <p
           data-fade
-          className="font-serif italic text-white"
-          style={{ fontSize: 'clamp(1.75rem, 4vw, 2.5rem)', lineHeight: 1.2 }}
+          className="font-serif italic"
+          style={{ fontSize: 'clamp(1.75rem, 4vw, 2.5rem)', lineHeight: 1.2, color: 'var(--color-void)' }}
         >
           We built SEION to end that.
         </p>

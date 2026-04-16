@@ -45,7 +45,7 @@ export function Industries() {
                 <span
                   className="font-sans font-semibold text-void text-lg"
                   style={{ transition: 'color 250ms ease' }}
-                  onMouseEnter={(e) => { (e.target as HTMLElement).style.color = 'var(--color-gold)'; }}
+                  onMouseEnter={(e) => { (e.target as HTMLElement).style.color = 'var(--color-teal)'; }}
                   onMouseLeave={(e) => { (e.target as HTMLElement).style.color = 'var(--color-void)'; }}
                 >
                   {row.name}
