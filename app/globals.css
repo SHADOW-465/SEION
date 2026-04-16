@@ -30,14 +30,16 @@
   --color-teal-light:   #d6ece5;
 
   /* Ink scale (for text on cream) */
-  --color-ink-2:        #3d3c38;
+  --color-ink-2:        #2c2b27;
   --color-ink-3:        #8a8880;
 
   /* Border */
   --color-border:       #d8d4c8;
 
   /* Surface (slightly darker cream for alternating sections) */
-  --color-surface-light: #ece9e1;
+  --color-surface-light: #e8e4da;
+  --color-card:          #ffffff;
+  --color-card-shadow:   rgba(0, 0, 0, 0.07);
 }
 
 /* ─── Base ──────────────────────────────────────────────── */

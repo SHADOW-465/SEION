@@ -42,9 +42,9 @@ export function ServiceCard02() {
   return (
     <div
       className="group relative overflow-hidden flex flex-col"
-      style={{ background: 'var(--color-cream)', padding: '48px 40px', transition: 'background 0.25s' }}
+      style={{ background: 'var(--color-card)', padding: '48px 40px', transition: 'background 0.25s' }}
       onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.background = 'rgba(26,92,74,0.03)'; }}
-      onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.background = 'var(--color-cream)'; }}
+      onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.background = 'var(--color-card)'; }}
     >
       <div className="absolute bottom-0 left-0 right-0 h-[3px] origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300" style={{ background: 'var(--color-teal)' }} />
 

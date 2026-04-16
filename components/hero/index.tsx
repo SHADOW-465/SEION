@@ -32,7 +32,7 @@ export function Hero() {
         display: 'grid',
         gridTemplateColumns: '1fr 1fr',
         padding: '0 48px',
-        paddingTop: '100px',
+        paddingTop: '80px',
         alignItems: 'center',
         gap: '80px',
         background: 'var(--color-cream)',
@@ -52,16 +52,17 @@ export function Hero() {
             style={{
               padding: '28px 32px',
               border: '1px solid var(--color-border)',
-              background: 'rgba(255,255,255,0.4)',
+              background: 'var(--color-card)',
+              boxShadow: '0 2px 16px var(--color-card-shadow)',
               transition: 'background 0.2s, border-color 0.2s',
               opacity: 0,
             }}
             onMouseEnter={(e) => {
-              (e.currentTarget as HTMLElement).style.background = 'rgba(255,255,255,0.7)';
+              (e.currentTarget as HTMLElement).style.background = 'var(--color-card)';
               (e.currentTarget as HTMLElement).style.borderColor = 'var(--color-teal)';
             }}
             onMouseLeave={(e) => {
-              (e.currentTarget as HTMLElement).style.background = 'rgba(255,255,255,0.4)';
+              (e.currentTarget as HTMLElement).style.background = 'var(--color-card)';
               (e.currentTarget as HTMLElement).style.borderColor = 'var(--color-border)';
             }}
           >

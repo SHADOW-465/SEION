@@ -1,7 +1,7 @@
 'use client';
+
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { PillButton } from '@/components/ui/PillButton';
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -13,50 +13,120 @@ export function Navbar() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  const navStyle: React.CSSProperties = {
-    position: 'fixed', top: 0, left: 0, right: 0, zIndex: 100,
-    display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-    padding: '20px 48px',
-    background: 'rgba(245,242,235,0.92)',
-    backdropFilter: 'blur(16px)',
-    WebkitBackdropFilter: 'blur(16px)',
-    borderBottom: scrolled ? '1px solid var(--color-border)' : '1px solid transparent',
-    transition: 'border-color 0.3s',
-  };
-
   return (
     <>
-      <nav style={navStyle}>
-        {/* Wordmark — gold shimmer kept here */}
-        <Link href="/" className="shimmer-gold font-sans font-bold text-xl tracking-tight" style={{ letterSpacing: '0.06em', textDecoration: 'none', textTransform: 'uppercase', fontFamily: 'var(--font-sans)' }}>
+      {/* Desktop floating pill */}
+      <div
+        className="hidden md:block fixed left-0 right-0"
+        style={{ top: '20px', zIndex: 100 }}
+      >
+        <nav
+          style={{
+            maxWidth: '900px',
+            margin: '0 auto',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            padding: scrolled ? '12px 24px' : '14px 28px',
+            borderRadius: '9999px',
+            background: scrolled ? 'rgba(245,242,235,0.88)' : 'transparent',
+            backdropFilter: scrolled ? 'blur(20px)' : 'none',
+            WebkitBackdropFilter: scrolled ? 'blur(20px)' : 'none',
+            border: scrolled ? '1px solid rgba(216,212,200,0.7)' : '1px solid transparent',
+            boxShadow: scrolled ? '0 4px 24px rgba(0,0,0,0.06)' : 'none',
+            transition: 'all 0.35s cubic-bezier(0.16,1,0.3,1)',
+          }}
+        >
+          {/* Wordmark */}
+          <Link
+            href="/"
+            className="shimmer-gold font-sans font-bold"
+            style={{
+              fontSize: '18px',
+              letterSpacing: '0.08em',
+              textDecoration: 'none',
+              textTransform: 'uppercase',
+            }}
+          >
+            SEION
+          </Link>
+
+          {/* Links */}
+          <div className="flex items-center gap-8">
+            {[
+              { label: 'Services', href: '#services' },
+              { label: 'Work', href: '#work' },
+              { label: 'How We Work', href: '#process' },
+              { label: 'About', href: '#about' },
+            ].map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                className="font-sans text-sm transition-colors duration-200"
+                style={{
+                  color: 'var(--color-ink-2)',
+                  letterSpacing: '0.03em',
+                  textDecoration: 'none',
+                  fontWeight: 400,
+                }}
+                onMouseEnter={(e) => { (e.target as HTMLElement).style.color = 'var(--color-teal)'; }}
+                onMouseLeave={(e) => { (e.target as HTMLElement).style.color = 'var(--color-ink-2)'; }}
+              >
+                {link.label}
+              </a>
+            ))}
+
+            {/* CTA */}
+            <a
+              href="#contact"
+              className="font-sans font-medium text-xs rounded-full transition-all duration-200"
+              style={{
+                background: 'var(--color-void)',
+                color: 'var(--color-cream)',
+                padding: '9px 20px',
+                letterSpacing: '0.06em',
+                textTransform: 'uppercase',
+                textDecoration: 'none',
+                border: '1.5px solid var(--color-void)',
+              }}
+              onMouseEnter={(e) => {
+                (e.currentTarget as HTMLElement).style.background = 'var(--color-teal)';
+                (e.currentTarget as HTMLElement).style.borderColor = 'var(--color-teal)';
+              }}
+              onMouseLeave={(e) => {
+                (e.currentTarget as HTMLElement).style.background = 'var(--color-void)';
+                (e.currentTarget as HTMLElement).style.borderColor = 'var(--color-void)';
+              }}
+            >
+              Book Audit
+            </a>
+          </div>
+        </nav>
+      </div>
+
+      {/* Mobile top bar */}
+      <nav
+        className="md:hidden fixed top-0 left-0 right-0 flex items-center justify-between"
+        style={{
+          zIndex: 100,
+          padding: '16px 24px',
+          background: scrolled ? 'rgba(245,242,235,0.92)' : 'rgba(245,242,235,0.6)',
+          backdropFilter: 'blur(16px)',
+          WebkitBackdropFilter: 'blur(16px)',
+          borderBottom: scrolled ? '1px solid var(--color-border)' : '1px solid transparent',
+          transition: 'all 0.3s ease',
+        }}
+      >
+        <Link
+          href="/"
+          className="shimmer-gold font-sans font-bold"
+          style={{ fontSize: '16px', letterSpacing: '0.08em', textDecoration: 'none', textTransform: 'uppercase' }}
+        >
           SEION
         </Link>
 
-        {/* Desktop links */}
-        <div className="hidden md:flex items-center gap-9">
-          {[
-            { label: 'Services', href: '#services' },
-            { label: 'Work', href: '#work' },
-            { label: 'How We Work', href: '#process' },
-            { label: 'About', href: '#about' },
-          ].map((link) => (
-            <a
-              key={link.label}
-              href={link.href}
-              className="font-sans text-sm transition-colors duration-200"
-              style={{ color: 'var(--color-ink-2)', letterSpacing: '0.04em', textDecoration: 'none' }}
-              onMouseEnter={(e) => { (e.target as HTMLElement).style.color = 'var(--color-teal)'; }}
-              onMouseLeave={(e) => { (e.target as HTMLElement).style.color = 'var(--color-ink-2)'; }}
-            >
-              {link.label}
-            </a>
-          ))}
-          <PillButton label="Book 30-min Audit" href="#contact" />
-        </div>
-
-        {/* Mobile hamburger */}
         <button
-          className="md:hidden flex flex-col gap-1.5 p-2"
+          className="flex flex-col gap-1.5 p-2"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle menu"
         >
@@ -68,10 +138,7 @@ export function Navbar() {
 
       {/* Mobile overlay */}
       {menuOpen && (
-        <div
-          className="fixed inset-0 z-50 flex flex-col justify-center px-8"
-          style={{ background: 'var(--color-cream)' }}
-        >
+        <div className="fixed inset-0 flex flex-col justify-center px-8 md:hidden" style={{ background: 'var(--color-cream)', zIndex: 200 }}>
           <button
             className="absolute top-6 right-6 font-mono text-xs uppercase tracking-wider"
             onClick={() => setMenuOpen(false)}

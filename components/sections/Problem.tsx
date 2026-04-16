@@ -33,7 +33,7 @@ export function Problem() {
         >
           <p
             className="font-sans text-base leading-[1.85] lg:text-lg"
-            style={{ color: 'var(--color-ink-2)' }}
+            style={{ color: 'var(--color-ink-2)', fontWeight: 400 }}
           >
             Most Indian businesses are drowning in data they can&apos;t read. Scattered across
             Tally, WhatsApp, handwritten registers, and decade-old Excel files — your data
@@ -45,7 +45,7 @@ export function Problem() {
         <p
           data-fade
           className="font-serif italic"
-          style={{ fontSize: 'clamp(1.75rem, 4vw, 2.5rem)', lineHeight: 1.2, color: 'var(--color-void)' }}
+          style={{ fontSize: 'clamp(1.75rem, 4vw, 2.5rem)', lineHeight: 1.2, color: 'var(--color-void)', fontWeight: 400 }}
         >
           We built SEION to end that.
         </p>

@@ -7,12 +7,12 @@ export function ServiceCard01() {
     <div
       className="group relative overflow-hidden flex flex-col"
       style={{
-        background: 'var(--color-cream)',
+        background: 'var(--color-card)',
         padding: '48px 40px',
         transition: 'background 0.25s',
       }}
       onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.background = 'rgba(26,92,74,0.03)'; }}
-      onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.background = 'var(--color-cream)'; }}
+      onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.background = 'var(--color-card)'; }}
     >
       {/* Bottom accent line */}
       <div

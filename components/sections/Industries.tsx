@@ -43,7 +43,7 @@ export function Industries() {
             >
               <div className="flex items-center gap-6">
                 <span
-                  className="font-sans font-semibold text-void text-lg"
+                  className="font-serif font-semibold text-void text-lg"
                   style={{ transition: 'color 250ms ease' }}
                   onMouseEnter={(e) => { (e.target as HTMLElement).style.color = 'var(--color-teal)'; }}
                   onMouseLeave={(e) => { (e.target as HTMLElement).style.color = 'var(--color-void)'; }}

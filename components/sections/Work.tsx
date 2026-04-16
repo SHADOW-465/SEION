@@ -89,7 +89,7 @@ export function Work() {
             <div
               key={i}
               className="grid lg:grid-cols-[1fr_1fr_240px] gap-0"
-              style={{ background: 'var(--color-surface-light)' }}
+              style={{ background: 'var(--color-card)' }}
             >
               {/* Left: context */}
               <div style={{ padding: '40px', borderRight: '1px solid var(--color-border)' }}>
