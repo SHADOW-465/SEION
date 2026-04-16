@@ -27,29 +27,52 @@ export function Services() {
     <section
       id="services"
       ref={ref}
-      data-section-light
       style={{ background: 'var(--color-cream)', padding: '7rem 0' }}
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
-        <div className="flex flex-col gap-3 mb-12" data-fade>
+        <div data-fade>
           <SectionLabel text="What We Build" light />
           <h2
-            className="font-sans font-bold text-void"
-            style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', lineHeight: 1.1 }}
+            className="font-serif"
+            style={{
+              fontSize: 'clamp(36px, 4vw, 52px)',
+              fontWeight: 300,
+              lineHeight: 1.15,
+              letterSpacing: '-0.01em',
+              color: 'var(--color-void)',
+              marginBottom: '16px',
+            }}
           >
-            Three problems. Solved properly.
+            We study how your business runs.<br />
+            <em style={{ fontStyle: 'italic', color: 'var(--color-teal)' }}>
+              Then we build the system it needs.
+            </em>
           </h2>
-          <p className="font-sans text-void/65 text-base max-w-xl leading-relaxed">
-            Not six. Not twelve. Three types of AI systems that create measurable impact — and
-            we build each one as if it&apos;s the only thing we do.
+          <p
+            className="font-sans"
+            style={{
+              fontSize: '16px',
+              fontWeight: 300,
+              color: 'var(--color-ink-2)',
+              maxWidth: '560px',
+              lineHeight: 1.75,
+              marginBottom: '64px',
+            }}
+          >
+            We do not offer everything. We focus on three types of AI systems that
+            create the most measurable impact — and we build each one with precision.
           </p>
         </div>
 
-        {/* Bento grid — responsive */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div className="md:row-span-2" data-fade><ServiceCard01 /></div>
-          <div data-fade><ServiceCard02 /></div>
-          <div data-fade><ServiceCard03 /></div>
+        {/* 3-column equal grid */}
+        <div
+          className="grid grid-cols-1 md:grid-cols-3 gap-px"
+          style={{ background: 'var(--color-border)' }}
+          data-fade
+        >
+          <ServiceCard01 />
+          <ServiceCard02 />
+          <ServiceCard03 />
         </div>
       </div>
     </section>

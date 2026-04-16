@@ -1,67 +1,37 @@
-// components/services/ServiceCard01.tsx
 'use client';
-
-import { useRef } from 'react';
 
 const tags = ['Invoice automation', 'WhatsApp workflows', 'Document processing', 'Report generation'];
 
 export function ServiceCard01() {
-  const cardRef = useRef<HTMLDivElement>(null);
-
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (!cardRef.current) return;
-    const rect = cardRef.current.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-    cardRef.current.style.setProperty('--mx', `${x}px`);
-    cardRef.current.style.setProperty('--my', `${y}px`);
-  };
-
   return (
     <div
-      ref={cardRef}
-      onMouseMove={handleMouseMove}
-      className="relative bg-white rounded-card p-8 flex flex-col justify-between overflow-hidden group h-full"
+      className="group relative overflow-hidden flex flex-col"
       style={{
-        border: '1px solid var(--color-border-light)',
-        boxShadow: '0 2px 24px rgba(0,0,0,0.06)',
+        background: 'var(--color-cream)',
+        padding: '48px 40px',
+        transition: 'background 0.25s',
       }}
+      onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.background = 'rgba(26,92,74,0.03)'; }}
+      onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.background = 'var(--color-cream)'; }}
     >
-      {/* Spotlight glow */}
-      <div
-        className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-        style={{
-          background: 'radial-gradient(400px at var(--mx, 50%) var(--my, 50%), rgba(212,149,42,0.12), transparent)',
-        }}
-      />
-
       {/* Bottom accent line */}
       <div
-        className="absolute bottom-0 left-0 h-0.5 w-full origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-[380ms]"
-        style={{ background: 'var(--color-gold)', transitionTimingFunction: 'var(--ease-morph)' }}
+        className="absolute bottom-0 left-0 right-0 h-[3px] origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300"
+        style={{ background: 'var(--color-teal)' }}
       />
 
-      <div className="flex flex-col gap-5 relative z-10">
-        <div className="font-mono text-xs text-void/40 uppercase tracking-wider">01</div>
-        <h3 className="font-sans font-bold text-void text-2xl leading-tight">
-          AI Workflow Automation
-        </h3>
-        <p className="font-sans font-bold text-void/80 text-base">The 14-hour problem.</p>
-        <p className="font-sans text-void/65 text-sm leading-relaxed">
-          Every week, someone in your business spends 10–20 hours doing things a computer could
-          do in seconds. Invoice follow-ups. Customer status messages. Monthly reports. Data entry
-          between systems. We map every manual step. Then we build the system that handles it —
-          so your people handle the work that actually needs a person.
-        </p>
-      </div>
-
-      <div className="flex flex-wrap gap-2 mt-6 relative z-10">
+      <div className="font-mono text-xs tracking-[0.1em] uppercase mb-6" style={{ color: 'var(--color-ink-3)' }}>01</div>
+      <h3 className="font-serif mb-4" style={{ fontSize: '26px', fontWeight: 400, lineHeight: 1.2, color: 'var(--color-void)' }}>
+        AI Workflow Automation
+      </h3>
+      <p className="font-sans text-sm leading-relaxed mb-6 flex-1" style={{ fontWeight: 300, color: 'var(--color-ink-2)', lineHeight: 1.7 }}>
+        We map your current operations, identify the highest-cost manual steps, and build AI
+        systems that handle them automatically. Customer communication, document processing,
+        scheduling, reporting — anything that follows a pattern can be automated.
+      </p>
+      <div className="flex flex-wrap gap-2">
         {tags.map((tag) => (
-          <span
-            key={tag}
-            className="font-mono text-[0.65rem] uppercase tracking-wider text-void/50 px-2.5 py-1 rounded-md"
-            style={{ background: 'rgba(12,12,14,0.06)', border: '1px solid rgba(12,12,14,0.08)' }}
-          >
+          <span key={tag} className="font-mono text-[9px] uppercase tracking-[0.1em] px-2.5 py-1 rounded-sm" style={{ background: 'var(--color-teal-light)', color: 'var(--color-teal)' }}>
             {tag}
           </span>
         ))}
